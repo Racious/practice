@@ -13,7 +13,7 @@ public class Guess2 {
         int max=99;
         int min=0;
         //答案
-        System.out.println(x);
+        //System.out.println(x);
         //請求輸入
         Scanner req = new Scanner(System.in);
         while (req.hasNext())
