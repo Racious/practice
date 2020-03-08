@@ -30,21 +30,20 @@ public class Guess {
         int Bad;
         Scanner req = new Scanner(System.in);
         while (req.hasNext()) {
+            //建立字串 s，將輸入的數字放入
             String s = req.nextLine();
             int[] ary = new int[s.length()]; // 宣告一個整數陣列，長度為字串 s 的長度
-            //判斷輸入的長度
+            //判斷輸入的長度是否為4
             switch (ary.length) {
                 case 4:
                     for (int i = 0; i < s.length(); i++) { // 利用迴圈，依序讀取字串 s 中的每一個字元
-                        String s2 = s.substring(i, i + 1); // 利用 substring() 來捉每一個字元
+                        String s2 = s.substring(i, i + 1); // 利用 substring() 來捉每一個字元放入字串 s2
                         ary[i] = Integer.parseInt(s2); // 將捉到的字元轉為整數，存入陣列
                     }
                     //判斷輸入的字是否有重複
                     if (ary[0] == ary[1] || ary[0] == ary[2] || ary[0] == ary[3] || ary[1] == ary[2] || ary[1] == ary[3] || ary[2] == ary[3]) {
                         System.out.println("輸入的字有重複唷！");
                     } else {
-                        //判斷是否輸入4個數字
-                        if (ary.length == 4) {
                             //重置AB數
                             Good = 0;
                             Bad = 0;
@@ -70,7 +69,7 @@ public class Guess {
                             } else {
                                 System.out.println("好可惜 再試試看");
                             }
-                        }
+//                        }
                     }
                     break;
                 //若輸入的數字不是4個
