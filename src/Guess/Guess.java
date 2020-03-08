@@ -23,11 +23,13 @@ public class Guess {
                         String s2 = s.substring(i, i + 1); // 利用 substring() 來捉每一個字元放入字串 s2
                         ary[i] = Integer.parseInt(s2); // 將捉到的字元轉為整數，存入陣列
                     }
-                    //判斷輸入的字是否有重複
-                    if (check(ary)) {
+                    //將陣列ary送去，並傳回值判斷是否為1(有重複數字)
+                    if (check(ary)==1) {
                         System.out.println("輸入的字有重複唷！");
                     } else {
+                        //將陣列ary,ansseat送去，並傳回計算後good的數量
                         good = anwser(ary, ansseat);
+                        //若4A 結束遊戲
                         if (good == 4) {
                             System.out.println("恭喜猜對了！！");
                             req.close();
@@ -64,12 +66,21 @@ public class Guess {
         }
         //亂數的答案
         System.out.println("答案:" + ansseat[0] + ansseat[1] + ansseat[2] + ansseat[3]);
-        System.out.println("\n");        //輸入數字
+        System.out.println("\n");
+        //回傳ansseat陣列內容
         return ansseat;
     }
 
-    public static boolean check(int[] ary) {
-        return ary[0] == ary[1] || ary[0] == ary[2] || ary[0] == ary[3] || ary[1] == ary[2] || ary[1] == ary[3] || ary[2] == ary[3];
+    public static int check(int[] ary) {
+        int x = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = i + 1; j < 4; j++) {
+                if(ary[i] == ary[j]){
+                    x=1;
+                }
+            }
+        }
+        return x;
     }
 
     public static int anwser(int[] ary, int[] ansseat) {
@@ -90,8 +101,8 @@ public class Guess {
         }
         //輸出顯示幾A幾B
         System.out.println(good + "A" + bad + "B");
+        //回傳good數
         return good;
-        //若4A 結束遊戲
     }
 
 }
