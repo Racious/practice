@@ -12,31 +12,10 @@ public class ATM {
         Scanner req = new Scanner(System.in);
         //判斷輸入
         while (req.hasNext()) {
-            int number = req.nextInt();
-            //判斷選擇需求
-            if (number == 1) {
-                System.out.println("餘額 = " + acc1.Balance());
-                acc1.Hello();
-            } else if (number == 2) {
-                //存錢
-                acc1.savemoney(req);
-                acc1.Hello();
-            } else if (number == 3) {
-                //提款
-                acc1.getmoney(req);
-                acc1.Hello();
-            } else if (number == 4) {
-                //結束程式
+            if (acc1.select(req.nextInt())) {
                 req.close();
-                break;
-            } else {
-                //無此項目
-                System.out.println("無此項目 請再重試");
-                acc1.Hello();
+                return;
             }
-
         }
-
     }
-
 }
