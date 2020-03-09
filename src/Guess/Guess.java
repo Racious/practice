@@ -2,7 +2,7 @@ package Guess;
 
 import java.util.Random;
 import java.util.Scanner;
-//幾A幾B 猜輸字程式
+//幾A幾B 猜數字程式
 
 public class Guess {
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class Guess {
                         ary[i] = Integer.parseInt(s2); // 將捉到的字元轉為整數，存入陣列
                     }
                     //將陣列ary送去，並傳回值判斷是否為1(有重複數字)
-                    if (check(ary)==1) {
+                    if (check(ary)) {
                         System.out.println("輸入的字有重複唷！");
                     } else {
                         //將陣列ary,ansseat送去，並傳回計算後good的數量
@@ -71,12 +71,12 @@ public class Guess {
         return ansseat;
     }
 
-    public static int check(int[] ary) {
-        int x = 0;
+    public static boolean check(int[] ary) {
+        boolean x = false;
         for (int i = 0; i < 3; i++) {
             for (int j = i + 1; j < 4; j++) {
-                if(ary[i] == ary[j]){
-                    x=1;
+                if (ary[i] == ary[j]) {
+                    x = true;
                 }
             }
         }
