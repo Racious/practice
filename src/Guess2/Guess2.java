@@ -15,7 +15,7 @@ public class Guess2 {
 
         //請求輸入
         Scanner req = new Scanner(System.in);
-        calc ans = new calc();
+        Calc ans = new Calc();
         while (req.hasNext()) {
             //判斷大小
             int y = req.nextInt();

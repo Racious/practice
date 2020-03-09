@@ -1,11 +1,10 @@
 package Guess2;
 
-public class calc {
-        int max=99;
-        int min=0;
+public class Calc {
+    int max=99;
+    int min=0;
 
-        public  boolean play(int y,int x){
-            boolean z= false;
+    public  boolean play(int y,int x){
         if (y > x) {
             System.out.println("數字太大囉，再小一點");
             if(max>y){
@@ -21,8 +20,8 @@ public class calc {
         } else if (x==y) {
             System.out.println("猜對了，真厲害");
             //表示猜對，可結束程式
-            z = true;
+            return true;
         }
-        return z;
+        return false;
     }
 }
