@@ -22,7 +22,6 @@ public class TaiwanIDNumber {
                     greeting.hello();
                     break;
                 case"3":
-                    creatId.build(idCheck,greeting);
                     return;
                 default:
                     System.out.println("無此服務唷 還請您再次確認\n");
