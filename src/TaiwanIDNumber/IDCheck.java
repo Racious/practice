@@ -1,21 +1,26 @@
 package TaiwanIDNumber;
 
 import java.util.Scanner;
-
+//確認ID
 public class IDCheck {
+    //ID組成規則
     String idpattern = "[A-Za-z][1-2][0-9]{8}";
     String id;
+    //出生地
     String location;
+    //陣列 放身分證字號
     int ary[] = new int[10];
+    //換算英文字的數字
     int digit = 0;
     int tensdigit = 0;
     int firstletter = 0;
     int sum;
-
+    //判斷輸入的ID是否符合身分證編碼規則
     public void idkeyin(Greeting greeting, Scanner choose) {
         greeting.myid();
         while (choose.hasNext()) {
             id = choose.nextLine().toUpperCase();
+            //符合的話就開始計算是否為有效ID
             if (id.matches(idpattern)) {
                 correctid(id, greeting);
                 return;
@@ -26,14 +31,17 @@ public class IDCheck {
         }
 
     }
-
+    //驗證是否為有效ID
     public void correctid(String id, Greeting greeting) {
         sum = 0;
         digit = 0;
         sum = 0;
-        for (int i = 1; i < id.length(); i++) { // 利用迴圈，依序讀取字串 s 中的每一個字元
-            ary[i] = Integer.parseInt(id.substring(i, i + 1)); // 將捉到的字元轉為整數，存入陣列
+        // 利用迴圈，依序讀取字串的每一個字元
+        for (int i = 1; i < id.length(); i++) {
+            // 將捉到的字元轉為整數，存入陣列
+            ary[i] = Integer.parseInt(id.substring(i, i + 1));
         }
+        //將字母轉換成數字並計算總合
         switch (id.substring(0, 1)) {
             case "A":
                 ary[0] = 10;
@@ -148,6 +156,7 @@ public class IDCheck {
         }
         sum = sum + firstletter + ary[9];
         //System.out.println(sum);
+        //如果餘數為0，則為有效身分證
         if (sum % 10 == 0) {
             greeting.yes(location, ary);
         }
@@ -157,7 +166,7 @@ public class IDCheck {
     }
 
 
-
+    //隨機產生身分證
     public int[] ramdomid(String id, Greeting greeting) {
         sum = 0;
         digit = 0;
