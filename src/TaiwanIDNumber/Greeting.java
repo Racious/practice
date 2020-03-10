@@ -9,4 +9,29 @@ public class Greeting {
     public void myid() {
         System.out.println("請輸入要確認的身分證字號");
     }
+
+
+
+    public void yes(String location, int[] ary) {
+        if (ary[1] == 1) {
+            System.out.println("你的身分證正確 " + "出生"+location+" 男性\n");
+        } else {
+            System.out.println("你的身分證正確 " + "出生"+location+" 女性\n");
+        }
+
+    }
+
+    public void no() {
+        System.out.println("不好意思 你輸入的身分證號碼是錯的\n");
+    }
+
+    public void ramdomid(String id,int[] ary) {
+        if (ary[1] == 1) {
+            System.out.println("你的身分證字號為 "+id+" 男性\n");
+        } else {
+            System.out.println("你的身分證字號為 "+id+" 女性\n");
+        }
+
+    }
+
 }
