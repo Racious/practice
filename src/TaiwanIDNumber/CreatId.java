@@ -8,6 +8,7 @@ public class CreatId {
             , 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
     Random random = new Random();
     int idnumber;
+    int select;
     String id;
     //隨機產生身分證
     public void build(IDCheck idCheck, Greeting greeting) {
@@ -26,7 +27,8 @@ public class CreatId {
             id = id + Integer.toString(idnumber);
         }
         //將產生的ID進行確認
-        int ary[] = idCheck.ramdomid(id, greeting);
+        select=1;
+        int ary[] = idCheck.correctid(id, greeting,select);
         //尾數修正
         id = id.substring(0, id.length() - 1);
         id = id + Integer.toString(ary[9]);

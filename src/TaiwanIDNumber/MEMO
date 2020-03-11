@@ -1,0 +1,16 @@
+
+pattern用法
+
+//設定字串內容及範圍
+String pattern = "[A-Za-z][0-1][0-9]{8}";
+//需要比對的字串
+String idn = "C12356789";
+//對照字串idn是否符合pattern的規則，True of flase
+System.out.println(idn +" is "+Pattern.matches(pattern, idn));
+//另種寫法
+if(idn.matches(pattern))
+System.out.println("格式正確");
+
+字串刪除字
+id = id.substring(0, id.length() - 1);
+
