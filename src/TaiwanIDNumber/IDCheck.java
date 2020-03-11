@@ -152,15 +152,18 @@ public class IDCheck {
                 location = "連江縣";
                 break;
         }
-        tensdigit = (ary[0] / 10);
-        digit = (ary[0] % 10);
-        firstletter = tensdigit + (digit * 9);
+        tensdigit = (ary[0] / 10);//英文字母換算數值後的十位數
+        digit = (ary[0] % 10);//英文字母換算數值後的個位數
+        firstletter = tensdigit + (digit * 9);//計算英文字母換算的總和
+        //將剩餘數字進行加總
         for (int j = 1; j < 9; j++) {
             sum = sum + (ary[j] * (9 - j));
         }
+        //select=0為驗證是否有效身分證，1的話為產生身分證
         switch (select) {
             case 0:
                 sum = sum + firstletter + ary[9];
+                //判斷加總後是否能被10整除
                 if (sum % 10 == 0) {
                     greeting.yes(location, ary);
                 } else {

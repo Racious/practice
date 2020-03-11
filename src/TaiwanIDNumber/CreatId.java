@@ -7,6 +7,7 @@ public class CreatId {
     char[] city = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'
             , 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
     Random random = new Random();
+    //imnumeber放置隨機生產的數字，slect用來區別驗證或產生身分證，id用來放產生後的身分證
     int idnumber;
     int select;
     String id;
