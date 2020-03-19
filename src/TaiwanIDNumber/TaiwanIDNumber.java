@@ -1,7 +1,6 @@
 package TaiwanIDNumber;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class TaiwanIDNumber {
     public static void main(String[] args) {

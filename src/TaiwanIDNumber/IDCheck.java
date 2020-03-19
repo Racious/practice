@@ -5,18 +5,13 @@ import java.util.Scanner;
 //確認ID
 public class IDCheck {
     //ID組成規則
-    String idpattern = "[A-Za-z][1-2][0-9]{8}";
-    String id;
+    private String idpattern = "[A-Za-z][1-2][0-9]{8}";
+    private String id;
     //出生地
-    String location;
+    private String location;
     //陣列 放身分證字號
-    int ary[] = new int[10];
-    //換算英文字的數字
-    int digit = 0;
-    int tensdigit = 0;
-    int firstletter = 0;
-    int sum;
-    int select = 0;
+    private int ary[] = new int[10];
+    private int select = 0;
 
     //判斷輸入的ID是否符合身分證編碼規則
     public void idkeyin(Greeting greeting, Scanner choose) {
@@ -37,9 +32,11 @@ public class IDCheck {
 
     //驗證是否為有效ID
     public int[] correctid(String id, Greeting greeting, int select) {
-        sum = 0;
-        digit = 0;
-        sum = 0;
+        int sum=0 ;
+        //換算英文字的數字
+        int digit ;
+        int tensdigit ;
+        int firstletter ;
         // 利用迴圈，依序讀取字串的每一個字元
         for (int i = 1; i < id.length(); i++) {
             // 將捉到的字元轉為整數，存入陣列
@@ -173,11 +170,9 @@ public class IDCheck {
                 sum = sum + firstletter;
                 if (sum % 10 == 0) {
                     ary[9] = 0;
-                    return ary;
                 } else {
                     int x = 10 - (sum % 10);
                     ary[9] = x;
-                    return ary;
                 }
         }
         return ary;
