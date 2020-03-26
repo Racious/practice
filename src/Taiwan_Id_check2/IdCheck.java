@@ -1,6 +1,8 @@
 package Taiwan_Id_check2;
 
-public class Check {
+import java.time.LocalDate;
+
+public class IdCheck {
     public void checkid(String id) throws Exception {
         String id_pattern = "[a-zA-Z][1-2][0-9]{8}";//身分證格式
         int sum = 0;//計算總和
@@ -83,7 +85,7 @@ public class Check {
     }
 
     public void checkphone(String phone) throws Exception {
-        String phone_pattern = "(09)[0-9]{8}";
+        String phone_pattern = "^(09)[0-9]{8}";
         if (phone == null || !(phone.matches(phone_pattern))) {
             throw new Exception("手機號碼格式錯誤");
         }
@@ -94,6 +96,28 @@ public class Check {
         String mail_pattern = "^[a-z0-9_-]+([.a-z0-9_-])*@[a-z0-9_-]+([.a-z0-9_-]+)*$";
         if (mail == null || !(mail.toLowerCase().matches(mail_pattern))) {
             throw new Exception("電子信箱格式錯誤");
+        }
+    }
+
+    public void checkbirthday(String birthday) throws Exception {
+        String birthday_pattern = "^[0-9]{4}[\\-/\\./\\,](0?[1-9]|1[012])[\\-/\\./\\,](0?[1-9]|[12][0-9]|3[01])$";
+        if (birthday == null || !(birthday.matches(birthday_pattern))) {
+            throw new Exception("生日的格式錯誤");
+        }
+        if (LocalDate.now().getYear() - LocalDate.parse(birthday).getYear() < 0) {
+            throw new Exception("生日年分不能大於現在時間");
+        }
+        if (LocalDate.now().getMonthValue() - LocalDate.parse(birthday).getMonthValue() < 0) {
+            throw new Exception("生日月份不能大於現在時間");
+        }
+        if (LocalDate.now().getDayOfYear() - LocalDate.parse(birthday).getDayOfYear() < 0) {
+            throw new Exception("生日日期不能大於現在時間");
+        }
+    }
+    public void checkpasswork(String password) throws Exception {
+        String password_pattern = "^[a-zA-Z0-9]{6,20}$";
+        if (password == null || !(password.matches(password_pattern)) || password.length() < 6 || password.length() > 20) {
+            throw new Exception("密碼不能空白及需要大於6位小於20位數");
         }
     }
 }
