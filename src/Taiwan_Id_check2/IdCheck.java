@@ -99,25 +99,30 @@ public class IdCheck {
         }
     }
 
-    public void checkbirthday(String birthday) throws Exception {
-        String birthday_pattern = "^[0-9]{4}[\\-/\\./\\,](0?[1-9]|1[012])[\\-/\\./\\,](0?[1-9]|[12][0-9]|3[01])$";
-        if (birthday == null || !(birthday.matches(birthday_pattern))) {
-            throw new Exception("生日的格式錯誤");
-        }
-        if (LocalDate.now().getYear() - LocalDate.parse(birthday).getYear() < 0) {
-            throw new Exception("生日年分不能大於現在時間");
-        }
-        if (LocalDate.now().getMonthValue() - LocalDate.parse(birthday).getMonthValue() < 0) {
-            throw new Exception("生日月份不能大於現在時間");
-        }
-        if (LocalDate.now().getDayOfYear() - LocalDate.parse(birthday).getDayOfYear() < 0) {
-            throw new Exception("生日日期不能大於現在時間");
-        }
-    }
     public void checkpasswork(String password) throws Exception {
         String password_pattern = "^[a-zA-Z0-9]{6,20}$";
-        if (password == null || !(password.matches(password_pattern)) || password.length() < 6 || password.length() > 20) {
+        if (password == null || !(password.matches(password_pattern))) {
             throw new Exception("密碼不能空白及需要大於6位小於20位數");
         }
+    }
+
+    public void checkbirthday(LocalDate birthday) throws Exception {
+        if (!(LocalDate.now().isAfter(birthday))) {
+              throw new Exception("出生日不能大於今日");
+        }
+
+        }
+
+        public void checkbirthday(String date) throws Exception {
+            String birthday_pattern = "^[0-9]{4}[\\-/\\./\\,](0?[1-9]|1[012])[\\-/\\./\\,](0?[1-9]|[12][0-9]|3[01])$";
+            if (date == null || !(date.matches(birthday_pattern))) {
+                throw new Exception("生日年分不能大於現在時間");
+            }LocalDate birthday= LocalDate.parse(date);
+            checkbirthday(birthday);
+        }
+
+        public void checkbirthday(int year, int month, int day)throws Exception {
+            LocalDate birthday=LocalDate.of(year, month, day);
+            checkbirthday(birthday);
     }
 }

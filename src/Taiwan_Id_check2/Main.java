@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         IdCheck check=new IdCheck();
-        String id="A123123123";
+        String id="m129128471";
         String phone="0956551561";
         String mail="abcd-efg@gamil.com";
-        String birthday="2000-03-26";
-        String password="AbCd9876";
+        String birthday="2020-03-26";
+        String password="AcDg123";
         //驗證資料
         try{
             check.checkid(id);
@@ -19,8 +19,8 @@ public class Main {
             check.checkpasswork(password);
             //驗證無誤後再丟入set
         }catch (Exception e){
-            System.out.println(e.getMessage());
-            //e.printStackTrace();
+            System.out.println(e.getMessage());//顯示錯誤訊息
+            //e.printStackTrace();堆疊追蹤
             return;
         }
         System.out.println("身分證字號:"+id.toUpperCase()+" 正確");
