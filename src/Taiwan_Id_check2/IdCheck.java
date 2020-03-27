@@ -116,7 +116,7 @@ public class IdCheck {
         public void checkbirthday(String date) throws Exception {
             String birthday_pattern = "^[0-9]{4}[\\-/\\./\\,](0?[1-9]|1[012])[\\-/\\./\\,](0?[1-9]|[12][0-9]|3[01])$";
             if (date == null || !(date.matches(birthday_pattern))) {
-                throw new Exception("生日年分不能大於現在時間");
+                throw new Exception("生日的格式錯誤");
             }LocalDate birthday= LocalDate.parse(date);
             checkbirthday(birthday);
         }
