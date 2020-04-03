@@ -9,31 +9,30 @@ public class Test_MovieTheater {
         List<Ticket> tickets = new ArrayList<Ticket>();
         Ticket t0 = new Matinee();//早場票250
         Ticket t1 = new Full_Ticket();//全票300
-        tickets.add(t0);tickets.add(t1);//增加訂單
-        tickets.add(t1);tickets.add(t1);
-        tickets.add(t0);tickets.add(t0);
-        tickets.add(t0);tickets.add(t0);
-        tickets.add(t1);
-
-        t0.display(tickets);//顯示購物車
-        double sumprice=t0.sumprice(tickets);
-        System.out.println("總額是:\t"+Math.round(sumprice)+"元");//總額
+        //增加訂單
+        t0.addToShoppingCart(tickets, t0);  t0.addToShoppingCart(tickets, t1);
+        t0.addToShoppingCart(tickets, t0);  t0.addToShoppingCart(tickets, t1);
+        t0.addToShoppingCart(tickets, t1);  t0.addToShoppingCart(tickets, t0);
+        t0.addToShoppingCart(tickets, t0);  t0.addToShoppingCart(tickets, t1);
+        t0.addToShoppingCart(tickets, t0);
+        //顯示購物車
+        t0.display(tickets);
+        double sumprice = t0.sumprice(tickets);
+        System.out.println("總額是:\t" + Math.round(sumprice) + "元");
         System.out.println("==================================");
-
         //使用信用卡付款
-        double creditcard=t0.creditcard(tickets);
+        double creditcard = t0.creditcard(tickets);
         System.out.println("若您使用的是信用卡付款，享有6折優惠");
-        System.out.println("一共是"+Math.round(creditcard)+"元");
+        System.out.println("一共是" + Math.round(creditcard) + "元");
         System.out.println("==================================");
         //電信小額付費
         System.out.println("若您使用的是電信小額付款");
-        System.out.println("一共是"+Math.round(sumprice)+"元");
+        System.out.println("一共是" + Math.round(sumprice) + "元");
         System.out.println("==================================");
         //會員儲值卡
-        double memberprice=t0.memberprice(tickets);
+        double memberprice = t0.memberprice(tickets);
         System.out.println("若您使用的是專屬會員卡付款，享有8折優惠");
-        System.out.println("一共是"+Math.round(memberprice)+"元");
-
+        System.out.println("一共是" + Math.round(memberprice) + "元");
     }
 
 

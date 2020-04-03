@@ -6,7 +6,7 @@ public class Ticket {
     private int id;
     private String name;
     private double price;
-    private int number;
+    private int number=1;
     Calc calc=new Calc_Ticket();//透過介面宣告變數
 
     public int getId() {
@@ -46,19 +46,47 @@ public class Ticket {
         return  name +getNumber()+"張"+"\t共" + Math.round(price*getNumber())+"元";
 
     }
-    //計算總額
+
+    /**
+     * 商品加入購物車
+     * @param tickets   購物車清單
+     * @param addticket 購買的商品
+     */
+    public void addToShoppingCart(List<Ticket> tickets,Ticket addticket){
+        calc.addToShoppingCart(tickets,addticket);
+    }
+
+    /**
+     *計算總額
+     * @param tickets   購物車清單
+     * @return  總額
+     */
     public double sumprice(List<Ticket> tickets){
         return calc.sum(tickets);
     }
-    //顯示購物車
+
+    /**
+     * 顯示購物車資訊
+     * @param tickets   購物車清單
+     */
     public void display(List<Ticket> tickets) {
         calc.display(tickets);
     }
-    //信用卡付款
+
+    /**
+     * 信用卡付款
+     * @param tickets   購物車清單
+     * @return  總額
+     */
     public double creditcard(List<Ticket> tickets) {
         return calc.creditcard(tickets);
     }
-    //會員付款
+
+    /**
+     * 會員付款
+     * @param tickets   購物車清單
+     * @return  總額
+     */
     public double memberprice(List<Ticket> tickets) {
         return calc.memberprice(tickets);
     }
