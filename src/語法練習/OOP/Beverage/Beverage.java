@@ -19,4 +19,9 @@ public abstract class Beverage {
     public double getCost() {
         return cost;
     }
+
+    @Override
+    public String toString() {
+        return getName()+" "+getCost()+"元";
+    }
 }
