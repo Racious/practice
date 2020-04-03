@@ -22,7 +22,7 @@ public class Calc_Ticket implements Calc {
     }
 
     @Override
-    public void display(List<Ticket> tickets) {
+    public void display(List<Ticket> tickets) {//顯示幕前購買的品項及價錢總和
         //做一次票數加總
         number(tickets);
         List<Ticket> displayticket=new ArrayList<Ticket>(tickets);//複製一份購物車陣列

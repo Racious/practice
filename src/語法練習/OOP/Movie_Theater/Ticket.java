@@ -7,7 +7,7 @@ public class Ticket {
     private String name;
     private double price;
     private int number;
-    Calc calc=new Calc_Ticket();//介面窗口
+    Calc calc=new Calc_Ticket();//透過介面宣告變數
 
     public int getId() {
         return id;
