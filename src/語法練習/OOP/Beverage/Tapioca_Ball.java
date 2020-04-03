@@ -7,6 +7,10 @@ public class Tapioca_Ball extends Topping {
         this.beverage = beverage;
     }
 
+    /**
+     * 先前點的飲料加上此配料
+     * @return
+     */
     @Override
     public String getName() {
         return beverage.getName()+"+珍珠";//加上配料的名稱
