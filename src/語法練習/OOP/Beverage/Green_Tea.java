@@ -2,7 +2,12 @@ package Beverage;
 
 public class Green_Tea extends Beverage {
     public Green_Tea() {
-        setName("綠茶");
-        setCost(25);
+    }
+    public String getName() {
+        return "綠茶";
+    }
+
+    public double getCost(){
+        return 25;
     }
 }
