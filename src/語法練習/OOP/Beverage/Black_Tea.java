@@ -2,7 +2,13 @@ package Beverage;
 
 public class Black_Tea extends Beverage{
     public Black_Tea() {
-        setName("紅茶");
-        setCost(25);
+    }
+
+    public String getName() {
+        return "紅茶";
+    }
+
+    public double getCost(){
+        return 25;
     }
 }
