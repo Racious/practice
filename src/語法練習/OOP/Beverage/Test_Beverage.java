@@ -2,24 +2,31 @@ package Beverage;
 
 public class Test_Beverage {
     public static void main(String[] args) {
+        Beverage greentea=new Green_Tea();
+        Beverage blacktea=new Black_Tea();
+        Beverage milktea=new Milk_Tea();
+        Beverage Yakult_greentea=new Yakult(greentea);
+
         Beverage drink1=new Black_Tea();//訂單1 只點紅茶
-        System.out.println(drink1.getName()+" "+drink1.getCost()+"元");
+        System.out.println(drink1);
 
         Beverage drink2=new Black_Tea();//訂單2 紅茶
         drink2=new Tapioca_Ball(drink2);//配料珍珠
-        System.out.println(drink2.getName()+" "+drink2.getCost()+"元");
+        System.out.println(drink2);
 
         Beverage drink3=new Milk_Tea();//訂單3 奶茶
         drink3=new Tapioca_Ball(drink3);//配料珍珠
         drink3=new Yakult(drink3);//配料多多
-        System.out.println(drink3.getName()+" "+drink3.getCost()+"元");
+        System.out.println(drink3);
 
         Beverage drink4=new Green_Tea();//訂單3 綠茶
         drink4=new Tapioca_Ball(drink4);//配料珍珠
         drink4=new Coconut_Jelly(drink4);//配料椰果
         drink4=new Taro_Balls(drink4);//配料芋園
-        System.out.println(drink4.getName()+" "+drink4.getCost()+"元");
-        System.out.println();
+        System.out.println(drink4);
+
+        Beverage drink5=Yakult_greentea;
+        System.out.println(drink5);
     }
 }
 /*飲料店練習
