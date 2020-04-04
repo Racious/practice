@@ -9,12 +9,11 @@ public class Test_MovieTheater {
         List<Ticket> tickets = new ArrayList<Ticket>();
         Ticket t0 = new Matinee();//早場票250
         Ticket t1 = new Full_Ticket();//全票300
+        Ticket t2=  new Ticket(2,"半票",260);
         //增加訂單
-        t0.addToShoppingCart(tickets, t0);  t0.addToShoppingCart(tickets, t1);
-        t0.addToShoppingCart(tickets, t0);  t0.addToShoppingCart(tickets, t1);
-        t0.addToShoppingCart(tickets, t1);  t0.addToShoppingCart(tickets, t0);
-        t0.addToShoppingCart(tickets, t0);  t0.addToShoppingCart(tickets, t1);
-        t0.addToShoppingCart(tickets, t0);
+        t0.addToShoppingCart(tickets, t0,2);  t0.addToShoppingCart(tickets, t1,5);
+        t0.addToShoppingCart(tickets,t2,8);   t0.addToShoppingCart(tickets,t2,1);
+        t0.addToShoppingCart(tickets, t1,6);  t0.addToShoppingCart(tickets,t0,4);
         //顯示購物車
         t0.display(tickets);
         double sumprice = t0.sumprice(tickets);

@@ -6,8 +6,17 @@ public class Ticket {
     private int id;
     private String name;
     private double price;
-    private int number=1;
+    private int number=0;
     Calc calc=new Calc_Ticket();//透過介面宣告變數
+
+    public Ticket() {
+    }
+
+    public Ticket(int id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 
     public int getId() {
         return id;
@@ -52,8 +61,8 @@ public class Ticket {
      * @param tickets   購物車清單
      * @param addticket 購買的商品
      */
-    public void addToShoppingCart(List<Ticket> tickets,Ticket addticket){
-        calc.addToShoppingCart(tickets,addticket);
+    public void addToShoppingCart(List<Ticket> tickets,Ticket addticket,int num){
+        calc.addToShoppingCart(tickets,addticket,num);
     }
 
     /**
