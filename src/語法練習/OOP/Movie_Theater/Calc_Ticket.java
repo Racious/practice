@@ -66,9 +66,9 @@ public class Calc_Ticket implements Calc {
     @Override
     public void addToShoppingCart(List<Ticket> tickets, Ticket addTicket, int num) {
 
-        for (Ticket origticket : tickets) {
-            if (origticket.getId() == addTicket.getId()) {
-                origticket.setNumber(origticket.getNumber() + num);
+        for (Ticket origTicket : tickets) {
+            if (origTicket.getId() == addTicket.getId()) {
+                origTicket.setNumber(origTicket.getNumber() + num);
                 return;
             }
         }
