@@ -73,7 +73,7 @@ public class Ticket {
      * @param tickets   購物車清單
      * @return  總額
      */
-    public double sumprice(List<Ticket> tickets){
+    public double sumPrice(List<Ticket> tickets){
         return calc.sum(tickets);
     }
 
@@ -90,8 +90,8 @@ public class Ticket {
      * @param tickets   購物車清單
      * @return  總額
      */
-    public double creditcard(List<Ticket> tickets) {
-        return calc.creditcard(tickets);
+    public double creditCard(List<Ticket> tickets) {
+        return calc.creditCard(tickets);
     }
 
     /**
@@ -99,7 +99,7 @@ public class Ticket {
      * @param tickets   購物車清單
      * @return  總額
      */
-    public double memberprice(List<Ticket> tickets) {
-        return calc.memberprice(tickets);
+    public double memberPrice(List<Ticket> tickets) {
+        return calc.memberPrice(tickets);
     }
 }

@@ -38,7 +38,7 @@ public class Calc_Ticket implements Calc {
      * @return
      */
     @Override
-    public double creditcard(List<Ticket> tickets) {
+    public double creditCard(List<Ticket> tickets) {
         double price = sum(tickets);
         price *= 0.6;
         return price;
@@ -51,7 +51,7 @@ public class Calc_Ticket implements Calc {
      * @return
      */
     @Override
-    public double memberprice(List<Ticket> tickets) {
+    public double memberPrice(List<Ticket> tickets) {
         double price = sum(tickets);
         price *= 0.8;
         return price;

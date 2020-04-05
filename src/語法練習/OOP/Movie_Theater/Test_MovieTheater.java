@@ -16,22 +16,22 @@ public class Test_MovieTheater {
         t0.addToShoppingCart(tickets, t1,6);  t0.addToShoppingCart(tickets,t0,3);
         //顯示購物車
         t0.display(tickets);
-        double sumprice = t0.sumprice(tickets);
-        System.out.println("總額是:\t" + Math.round(sumprice) + "元");
+        double sumPrice = t0.sumPrice(tickets);
+        System.out.println("總額是:\t" + Math.round(sumPrice) + "元");
         System.out.println("==================================");
         //使用信用卡付款
-        double creditcard = t0.creditcard(tickets);
+        double creditCard = t0.creditCard(tickets);
         System.out.println("若您使用的是信用卡付款，享有6折優惠");
-        System.out.println("一共是" + Math.round(creditcard) + "元");
+        System.out.println("一共是" + Math.round(creditCard) + "元");
         System.out.println("==================================");
         //電信小額付費
         System.out.println("若您使用的是電信小額付款");
-        System.out.println("一共是" + Math.round(sumprice) + "元");
+        System.out.println("一共是" + Math.round(sumPrice) + "元");
         System.out.println("==================================");
         //會員儲值卡
-        double memberprice = t0.memberprice(tickets);
+        double memberPrice = t0.memberPrice(tickets);
         System.out.println("若您使用的是專屬會員卡付款，享有8折優惠");
-        System.out.println("一共是" + Math.round(memberprice) + "元");
+        System.out.println("一共是" + Math.round(memberPrice) + "元");
     }
 
 
