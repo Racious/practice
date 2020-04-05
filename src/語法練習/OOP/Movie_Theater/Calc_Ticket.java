@@ -59,21 +59,21 @@ public class Calc_Ticket implements Calc {
 
     /**
      * 加入購物車
-     *
-     * @param tickets   購物車清單
-     * @param addticket 購買商品
+     * @param tickets   購物車
+     * @param addTicket 購買的票種類
+     * @param num   購買的數量
      */
     @Override
-    public void addToShoppingCart(List<Ticket> tickets, Ticket addticket, int num) {
+    public void addToShoppingCart(List<Ticket> tickets, Ticket addTicket, int num) {
 
         for (Ticket origticket : tickets) {
-            if (origticket.getId() == addticket.getId()) {
+            if (origticket.getId() == addTicket.getId()) {
                 origticket.setNumber(origticket.getNumber() + num);
                 return;
             }
         }
-        addticket.setNumber(addticket.getNumber() + num);
-        tickets.add(addticket);
+        addTicket.setNumber(addTicket.getNumber() + num);
+        tickets.add(addTicket);
     }
 }
 

@@ -59,10 +59,13 @@ public class Ticket {
     /**
      * 商品加入購物車
      * @param tickets   購物車清單
-     * @param addticket 購買的商品
+     * @param addTicket 購買的商品
      */
-    public void addToShoppingCart(List<Ticket> tickets,Ticket addticket,int num){
-        calc.addToShoppingCart(tickets,addticket,num);
+    public void addToShoppingCart(List<Ticket> tickets,Ticket addTicket,int num){
+        if(num!=0){
+            calc.addToShoppingCart(tickets,addTicket,num);
+        }
+
     }
 
     /**

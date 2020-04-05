@@ -7,5 +7,5 @@ public interface Calc {
     void display(List<Ticket> tickets);//顯示購物車
     double creditcard(List<Ticket> tickets);//信用卡價格
     double memberprice(List<Ticket> tickets);//會員價格
-    void addToShoppingCart(List<Ticket> tickets,Ticket addticket,int num);//加入購物車
+    void addToShoppingCart(List<Ticket> tickets,Ticket addTicket,int num);//加入購物車
 }
